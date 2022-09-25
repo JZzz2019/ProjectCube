@@ -59,6 +59,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scorePoint: 1
+  collectibleName: Sphere
+  colour: {r: 0.9725491, g: 1, b: 0.17254902, a: 1}
 --- !u!1 &3813822754675142112
 GameObject:
   m_ObjectHideFlags: 0
@@ -74,7 +76,7 @@ GameObject:
   - component: {fileID: 8793230425956494441}
   m_Layer: 0
   m_Name: Sphere
-  m_TagString: Untagged
+  m_TagString: Sphere
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

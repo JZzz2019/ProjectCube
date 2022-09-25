@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3958713117510695877}
   m_Layer: 0
   m_Name: Capsule
-  m_TagString: Untagged
+  m_TagString: Capsule
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -175,3 +175,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scorePoint: 2
+  collectibleName: Capsule
+  colour: {r: 0.22352943, g: 1, b: 0.20000002, a: 1}

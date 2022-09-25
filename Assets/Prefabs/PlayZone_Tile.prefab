@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4944133950664065108}
   - component: {fileID: 4944133950664065109}
   - component: {fileID: 4944133950664065110}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PlayZone_Tile
   m_TagString: Untagged
   m_Icon: {fileID: 0}

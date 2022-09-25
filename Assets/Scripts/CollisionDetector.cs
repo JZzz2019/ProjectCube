@@ -4,20 +4,61 @@ using UnityEngine;
 
 public class CollisionDetector : MonoBehaviour
 {
-    private Score score;
+    private Collectible score;
 
     [SerializeField] private int scorePoint;
+    [SerializeField] private string collectibleName;
+    [SerializeField] private Color colour;
+
+    public Collectible Score
+    {
+        get { return score; }
+        set { score = value; }
+    }
     private void Start()
     {
-        score = new Score(scorePoint);
+        if (GameManager.Instance.Level >= 3)
+        {
+            checkIfCapsuleOrSphere(22, 20);
+        }
+        else if (GameManager.Instance.Level == 2)
+        {
+            checkIfCapsuleOrSphere(12, 10);
+        }
+        else
+        {
+            checkIfCapsuleOrSphere(2, 1);
+        }
+        score = new Collectible(scorePoint, collectibleName, colour);
     }
 
+    private void checkIfCapsuleOrSphere(int capsuleScore, int sphereScore)
+    {
+        if (collectibleName == "Capsule")
+        {
+            scorePoint = capsuleScore;
+        }
+        else
+        {
+            scorePoint = sphereScore;
+        }
+    }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject == GameManager.Instance.Player)
+        if (other.gameObject == GameManager.Instance.PlayerInstance)
         {
-            GameManager.Instance.RemoveFromOccupiedList(transform.parent.gameObject);
-            //add score to player
+            bool removedFromList = GameManager.Instance.RemoveFromOccupiedList(transform.parent.gameObject);
+            //add score and spawn collectible
+            GameManager.Instance.CurrentTouchedCollectible = score.CollectibleName;
+            GameManager.Instance.UpdateTouchedCollectible(score.Colour);
+            GameManager.Instance.AddOrReduceScore(score.Reward);
+            GameManager.Instance.SpawnCollectible();
+            GameManager.Instance.NumOfPushedItems++;
+
+            if (!removedFromList)
+            {
+                return;
+            }
             Destroy(transform.parent.gameObject);
         }
     }

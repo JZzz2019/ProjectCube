@@ -16,14 +16,7 @@ public class PlayMap : MonoBehaviour
     }
     public void GenerateGrid(int gridSize, float xAxis, float zAxis)
     {
-        if (parent.childCount > 0)
-        {
-            Debug.LogWarning("Grid's been generated");
-        }
-        else
-        {
-            GenerationImplementation(gridSize, xAxis, zAxis);
-        }
+       GenerationImplementation(gridSize, xAxis, zAxis);
     }
     private void GenerationImplementation(int _gridSize, float _xAxis, float _zAxis)
     {
@@ -54,6 +47,11 @@ public class PlayMap : MonoBehaviour
             mapTileList[i] = tempObject;
         }
         return mapTileList;
+    }
+
+    public void ClearList()
+    {
+        mapTileList.Clear();
     }
 
 

@@ -15,6 +15,12 @@ public class CameraFollow : MonoBehaviour
     [Range(1, 10)]
     [SerializeField] private float smoothFactor;
     [SerializeField] private Vector3 offset;
+
+    public Vector3 OffSet
+    {
+        get { return offset; }
+        set { offset = value; }
+    }
     private void FixedUpdate()
     {
         if (target != null)
