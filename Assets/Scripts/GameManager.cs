@@ -175,7 +175,7 @@ public class GameManager : MonoBehaviour
             endScreen.SetUpEndScreen(endingText, scorePoint);
 
             savingSystem.SaveData(scorePoint, numOfPushedItems);
-            savingSystem.LoadDataToDisplay(endScreen.highestScoreDisplayer, endScreen.numOfAttemptsDisplayer, endScreen.numOfPushedItemsDisplayer);
+            savingSystem.LoadDataToDisplay(endScreen.HighestScoreDisplayer, endScreen.NumOfAttemptsDisplayer, endScreen.NumOfPushedItemsDisplayer);
             return true;
         }
         //losing condition, -4 because the player size can only overlap 4 tiles
@@ -185,7 +185,7 @@ public class GameManager : MonoBehaviour
             endScreen.SetUpEndScreen(endingText, scorePoint);
 
             savingSystem.SaveData(scorePoint, numOfPushedItems);
-            savingSystem.LoadDataToDisplay(endScreen.highestScoreDisplayer, endScreen.numOfAttemptsDisplayer, endScreen.numOfPushedItemsDisplayer);
+            savingSystem.LoadDataToDisplay(endScreen.HighestScoreDisplayer, endScreen.NumOfAttemptsDisplayer, endScreen.NumOfPushedItemsDisplayer);
             return true;
         }
         //no condition's met
@@ -195,13 +195,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void pauseGame()
+    private void PauseGame()
     {
         Time.timeScale = 0;
         isGamePaused = true;
     }
 
-    private void unPauseGame()
+    private void UnPauseGame()
     {
         Time.timeScale = 1;
         isGamePaused = false;

@@ -584,7 +584,7 @@ MonoBehaviour:
   cameraFollow: {fileID: 931651390}
   PlayerInstance: {fileID: 0}
   lastTouchedCollectible: {fileID: 1462522456}
-  comboModifier: 40
+  comboModifier: 1
   level: 0
   levelProgressRequirement: 100
   endScreen: {fileID: 909261695}

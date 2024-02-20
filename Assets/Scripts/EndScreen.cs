@@ -8,9 +8,9 @@ public class EndScreen : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI endingTextDisplayer;
     [SerializeField] private TextMeshProUGUI scoreDisplayer;
-    public TextMeshProUGUI highestScoreDisplayer;
-    public TextMeshProUGUI numOfAttemptsDisplayer;
-    public TextMeshProUGUI numOfPushedItemsDisplayer;
+    public TextMeshProUGUI HighestScoreDisplayer;
+    public TextMeshProUGUI NumOfAttemptsDisplayer;
+    public TextMeshProUGUI NumOfPushedItemsDisplayer;
 
     private void Start()
     {
@@ -22,9 +22,6 @@ public class EndScreen : MonoBehaviour
 
         endingTextDisplayer.text = _endingText;
         scoreDisplayer.text = _currentScore.ToString();
-        //highestScoreDisplayer.text = _highestScore.ToString();
-        //numOfAttemptsDisplayer.text = _numOfAttempts.ToString();
-        //numOfPushedItemsDisplayer.text = _numOfPushedItems.ToString();
     }
 
     public void RestartGame()

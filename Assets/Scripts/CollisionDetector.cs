@@ -19,20 +19,20 @@ public class CollisionDetector : MonoBehaviour
     {
         if (GameManager.Instance.Level >= 3)
         {
-            checkIfCapsuleOrSphere(22, 20);
+            CheckIfCapsuleOrSphere(22, 20);
         }
         else if (GameManager.Instance.Level == 2)
         {
-            checkIfCapsuleOrSphere(12, 10);
+            CheckIfCapsuleOrSphere(12, 10);
         }
         else
         {
-            checkIfCapsuleOrSphere(2, 1);
+            CheckIfCapsuleOrSphere(2, 1);
         }
         score = new Collectible(scorePoint, collectibleName, colour);
     }
 
-    private void checkIfCapsuleOrSphere(int capsuleScore, int sphereScore)
+    private void CheckIfCapsuleOrSphere(int capsuleScore, int sphereScore)
     {
         if (collectibleName == "Capsule")
         {
